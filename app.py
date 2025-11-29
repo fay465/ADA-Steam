@@ -7,6 +7,7 @@ st.set_page_config(page_title="Steam Success Predictor", page_icon="🎮", layou
 
 @st.cache_resource
 def load_model():
+    # Asegúrate de que estos archivos estén en la misma carpeta que app.py
     model = joblib.load('steam_success_model.pkl')
     columns = joblib.load('model_columns.pkl')
     return model, columns
@@ -44,12 +45,12 @@ with col2:
     genres_selected = st.multiselect("Géneros", available_genres, default=default_valid)
 
 if st.button("Predecir", type="primary"):
-
+    
     input_data = {col: 0 for col in model_columns}
-
+    
     input_data['price_usd'] = price
     input_data['is_indie'] = 1 if is_indie else 0
-)
+
     for gen in genres_selected:
         if gen in input_data:
             input_data[gen] = 1
