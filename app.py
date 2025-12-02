@@ -21,7 +21,7 @@ except FileNotFoundError:
 st.title("Steam Success Predictor")
 st.markdown("""
 Esta herramienta predice la recepción de un juego basándose en sus metadatos.
-*Modelo: Random Forest (84% Exactitud)*
+*Modelo: Random Forest*
 """)
 
 st.divider()
@@ -70,4 +70,5 @@ if st.button("Predecir", type="primary"):
         st.progress(float(probability))
         
     except Exception as e:
+
         st.error(f"Ocurrió un error en la predicción: {e}")
