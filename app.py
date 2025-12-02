@@ -18,7 +18,7 @@ except FileNotFoundError:
     st.error("Error: No se encuentran los archivos .pkl. Asegúrate de exportarlos del Colab y ponerlos aquí.")
     st.stop()
 
-st.title("Steam Success Predictor")
+st.title("Predicción de éxito en Steam")
 st.markdown("""
 Esta herramienta predice la recepción de un juego basándose en sus metadatos.
 *Modelo: Random Forest*
@@ -72,4 +72,5 @@ if st.button("Predecir", type="primary"):
     except Exception as e:
 
         st.error(f"Ocurrió un error en la predicción: {e}")
+
 
