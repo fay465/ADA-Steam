@@ -3,7 +3,7 @@ import pandas as pd
 import joblib
 import numpy as np
 
-st.set_page_config(page_title="Steam Success Predictor", page_icon="🎮", layout="centered")
+st.set_page_config(page_title="Predicción de éxito en Steam", page_icon="🎮", layout="centered")
 
 @st.cache_resource
 def load_model():
@@ -72,3 +72,4 @@ if st.button("Predecir", type="primary"):
     except Exception as e:
 
         st.error(f"Ocurrió un error en la predicción: {e}")
+
